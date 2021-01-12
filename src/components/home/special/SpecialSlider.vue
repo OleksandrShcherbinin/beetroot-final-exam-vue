@@ -14,7 +14,11 @@
         </div>
       </splide-slide>
     </splide>
-    <img class="special__image" v-on:scroll="handleScroll" :style="style" :src="getImgUrl('/pizza-slices.png')" alt="pizza slices">
+    <picture class="special__image" v-on:scroll="handleScroll" :style="style">
+      <source :srcset="getImgUrl('/pizza-slices.webp')" type="image/webp">
+      <source :srcset="getImgUrl('/pizza-slices.png')" type="image/jpeg">
+      <img :src="getImgUrl('/pizza-slices.png')" alt="pizza slices">
+    </picture>
   </div>
 </template>
 

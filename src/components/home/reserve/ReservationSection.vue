@@ -3,8 +3,10 @@
     <h2 class="reserve__title">Reserve your table</h2>
     <div class="reserve-wrapper">
       <picture class="reserve-wrapper__img">
-        <source media="(min-width: 567px)" srcset="../../../assets/restaurant.jpg">
-        <source media="(max-width: 566.98px)" srcset="../../../assets/restaurant-small.jpg">
+        <source media="(min-width: 567px)" srcset="../../../assets/restaurant.webp" type="image/webp">
+        <source media="(min-width: 567px)" srcset="../../../assets/restaurant.jpg" type="image/jpeg">
+        <source media="(max-width: 566.98px)" srcset="../../../assets/restaurant-small.webp" type="image/webp">
+        <source media="(max-width: 566.98px)" srcset="../../../assets/restaurant-small.jpg" type="image/jpeg">
         <img src="../../../assets/restaurant.jpg" alt="restaurant">
       </picture>
       <ReserveForm/>

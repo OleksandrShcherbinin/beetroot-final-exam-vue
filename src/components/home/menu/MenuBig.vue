@@ -1,10 +1,12 @@
 <template>
   <section class="big-menu">
-    <img class="big-menu__image" src="../../../assets/bread.png" alt="bread">
-
+    <picture class="big-menu__image">
+      <source srcset="../../../assets/bread.webp" type="image/webp">
+      <source srcset="../../../assets/bread.png" type="image/jpeg">
+      <img src="../../../assets/bread.png" alt="bread">
+    </picture>
     <FoodMenu/>
   </section>
-
 </template>
 
 <script>

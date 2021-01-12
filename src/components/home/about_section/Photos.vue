@@ -1,12 +1,28 @@
 <template>
   <div class="photos">
     <div class="photos-first">
-      <img src="../../../assets/small-burger.jpeg" alt="burger">
-      <img src="../../../assets/small-pizza.jpg" alt="pizza">
+      <picture class="menu__image">
+        <source srcset="../../../assets/small-burger.webp" type="image/webp">
+        <source srcset="../../../assets/small-burger.jpeg" type="image/jpeg">
+        <img src="../../../assets/small-burger.jpeg" alt="burger">
+      </picture>
+      <picture class="menu__image">
+        <source srcset="../../../assets/small-pizza.webp" type="image/webp">
+        <source srcset="../../../assets/small-pizza.jpg" type="image/jpeg">
+        <img src="../../../assets/small-pizza.jpg" alt="small pizza">
+      </picture>
     </div>
     <div class="photos-second">
-      <img src="../../../assets/small-steak.jpg" alt="steak">
-      <img src="../../../assets/small-pasta.jpg" alt="pasta">
+      <picture class="menu__image">
+        <source srcset="../../../assets/small-steak.webp" type="image/webp">
+        <source srcset="../../../assets/small-steak.jpg" type="image/jpeg">
+        <img src="../../../assets/small-steak.jpg" alt="small pizza">
+      </picture>
+      <picture class="menu__image">
+        <source srcset="../../../assets/small-pasta.webp" type="image/webp">
+        <source srcset="../../../assets/small-pasta.jpg" type="image/jpeg">
+        <img src="../../../assets/small-pasta.jpg" alt="small pizza">
+      </picture>
     </div>
   </div>
 </template>

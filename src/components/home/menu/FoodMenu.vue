@@ -2,7 +2,11 @@
   <div class="menu">
     <FoodMenuHeader/>
     <MenuPiece/>
-    <img class="menu__image" src="../../../assets/burito.png" alt="burito">
+    <picture class="menu__image">
+      <source srcset="../../../assets/burito.webp" type="image/webp">
+      <source srcset="../../../assets/burito.png" type="image/jpeg">
+      <img src="../../../assets/burito.png" alt="burito">
+    </picture>
   </div>
 </template>
 

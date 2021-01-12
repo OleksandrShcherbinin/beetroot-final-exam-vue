@@ -22,6 +22,7 @@ name: "BottomHeader"
 
 <style scoped lang="scss">
 @import "src/scss/variables";
+@import "src/scss/mixins";
 .header-bottom {
   max-width: 1970px;
   min-height: 100px;
@@ -66,6 +67,10 @@ name: "BottomHeader"
     &__chat {
       width: 44px;
       height: 33px;
+      @media only screen and (max-width: 768px) {
+        width: 33px;
+        height: 22px;
+      }
     }
     &__chat:hover {
       transform: scale(1.5);
@@ -74,20 +79,26 @@ name: "BottomHeader"
     &__text {
       width: 67px;
       height: 32px;
-      font-family: $SR;
-      font-weight: 700;
+      @include text(#14141d, $SR, 14px, 700, uppercase);
       line-height: 20px;
-      text-transform: uppercase;
-      color: #14141d;
-      font-size: 14px;
+      @media only screen and (max-width: 768px) {
+        font-size: 10px;
+      }
       span {
         color: #fea100;
         font-size: 16px;
+        @media only screen and (max-width: 768px) {
+          font-size: 12px;
+        }
       }
     }
     &__chevron {
       width: 39px;
       height: 39px;
+      @media only screen and (max-width: 768px) {
+        width: 29px;
+        height: 29px;
+      }
     }
     &__chevron:hover {
       transform: scale(1.5);
@@ -99,18 +110,23 @@ name: "BottomHeader"
     position: relative;
     display: flex;
     align-items: center;
+    @media only screen and (max-width: 768px) {
+      margin-left: 0;
+    }
     &__text {
-    width: 123px;
-    height: 32px;
-    color: #14141d;
-    font-family: $SR;
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 20px;
-    text-transform: uppercase;
+      width: 123px;
+      height: 32px;
+      @include text(#14141d, $SR, 14px, 700, uppercase);
+      line-height: 20px;
+      @media only screen and (max-width: 768px) {
+      font-size: 10px;
+      }
     span {
       color: #fea100;
       font-size: 16px;
+      @media only screen and (max-width: 768px) {
+          font-size: 12px;
+      }
     }
   }
     &__call {
@@ -118,6 +134,10 @@ name: "BottomHeader"
       width: 37px;
       height: 37px;
       cursor: pointer;
+      @media only screen and (max-width: 768px) {
+        width: 27px;
+        height: 27px;
+      }
     }
     &__call:hover {
       transform: scale(1.5);
@@ -130,6 +150,9 @@ name: "BottomHeader"
     position: absolute;
     height: 98px;
     top: -20px;
+    @media only screen and (max-width: 768px) {
+      display: none;
+    }
   }
   &-contact:after {
     content: "";
@@ -138,6 +161,9 @@ name: "BottomHeader"
     width: 1px;
     height: 37px;
     background-color: #d7dee3;
+    @media only screen and (max-width: 768px) {
+      display: none;
+    }
   }
   &__phone {
     a {
@@ -147,6 +173,10 @@ name: "BottomHeader"
       font-size: 32px;
       font-weight: 700;
       text-transform: uppercase;
+      @media only screen and (max-width: 768px) {
+        font-size: 24px;
+        margin: 5px 0 5px 0;
+      }
     }
   }
 }

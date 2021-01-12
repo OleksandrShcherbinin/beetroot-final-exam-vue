@@ -12,7 +12,11 @@
       <div class="article-button__button">
         <h3 class="article-button__button__title">Read more</h3>
       </div>
-      <img src="../../../assets/awards.jpg" alt="awards" class="article-button__image">
+      <picture class="article-button__image">
+        <source srcset="../../../assets/awards.webp" type="image/webp">
+        <source srcset="../../../assets/awards.jpg" type="image/jpeg">
+        <img src="../../../assets/awards.jpg" alt="awards">
+      </picture>
     </div>
   </article>
 </template>
