@@ -1,0 +1,20 @@
+@mixin text($color, $font, $size, $weight, $text-transform) {
+    color: $color;
+    font-family: $font;
+    font-size: $size;
+    font-weight: $weight;
+    text-transform: $text-transform;
+}
+
+@mixin title($color, $font, $size, $weight) {
+    color: $color;
+    font-family: $font;
+    font-size: $size;
+    font-weight: $weight;
+}
+
+@mixin label {
+    position: absolute;
+    top: 23px;
+    right: 23px;
+}

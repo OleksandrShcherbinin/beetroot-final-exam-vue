@@ -1,18 +1,42 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Slider/>
+    <BottomHeader/>
+    <About/>
+    <BackGround/>
+    <MenuBig/>
+    <ReviewSlider/>
+    <ReservationSection/>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import Slider from "@/components/home/head_slider/Slider";
+import BottomHeader from "@/components/header/BottomHeader";
+import About from "@/components/home/about_section/About";
+import BackGround from "@/components/home/special/BackGround";
+import MenuBig from "@/components/home/menu/MenuBig";
+import ReservationSection from "@/components/home/reserve/ReservationSection";
+import ReviewSlider from "@/components/home/review/ReviewSlider";
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    Slider,
+    BottomHeader,
+    About,
+    BackGround,
+    MenuBig,
+    ReviewSlider,
+    ReservationSection
   }
 }
 </script>
+<style lang="scss">
+
+.home {
+  max-width: 1970px;
+  margin: 0 auto;
+  padding-top: 87px;
+}
+
+</style>
