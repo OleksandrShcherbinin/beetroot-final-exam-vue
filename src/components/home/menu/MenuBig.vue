@@ -37,10 +37,10 @@ name: "MenuBig",
     min-height: 1800px;
   }
   @media only screen and (max-width: 375px) {
-    min-height: 1850px;
-  }
-  @media only screen and (max-width: 320px) {
     min-height: 1900px;
+  }
+  @media only screen and (max-width: 330px) {
+    min-height: 1950px;
   }
   &__image {
     position: absolute;

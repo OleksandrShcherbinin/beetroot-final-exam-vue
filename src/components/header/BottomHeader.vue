@@ -41,6 +41,9 @@ name: "BottomHeader"
     @media only screen and (max-width: 1291.98px) {
       transform: scale(0.5);
     }
+     @media only screen and (max-width: 768px) {
+       display: none;
+     }
   }
   &__image:hover {
     transform: scale(0.9);
