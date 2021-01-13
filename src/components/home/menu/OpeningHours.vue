@@ -5,24 +5,37 @@
       <h3 class="hours-opening__info">Monday to Friday <span>10am - 10pm</span></h3>
       <h3 class="hours-opening__info">Saturday to Sunday <span>09am - 11pm</span></h3>
       <picture class="hours-opening__img">
-        <source srcset="../../../assets/dessert.webp" type="image/webp">
-        <source srcset="../../../assets/dessert.png" type="image/png">
-        <img src="../../../assets/dessert.png" alt="deserts">
-    </picture>
+        <source :srcset="getImgUrl(images[0].file)" type="image/webp">
+        <source :srcset="getImgUrl(images[1].file)" type="image/png">
+        <img :src="getImgUrl(images[2].file)" :alt="images[3].alt">
+      </picture>
     </div>
-
   </div>
-
 </template>
 
 <script>
 export default {
-  name: "OpeningHours"
+  name: "OpeningHours",
+  props: ["srcset"],
+  data() {
+    return {
+      images: [
+        {id: 5, file: "/dessert.webp"},
+        {id: 6, file: "/dessert.png"},
+        {id: 7, file: "/dessert.png"},
+        {id: 8, alt: "dessert"}
+        ],
+    }
+  },
+  methods: {
+    getImgUrl(img) {
+      return require('@/assets' + img)
+    },
+  }
 }
 </script>
 
 <style scoped lang="scss">
-//TODO fix opening styles for mobile
 @import "src/scss/variables";
 @import "src/scss/mixins";
 .hours {

@@ -1,14 +1,33 @@
 <template>
   <div class="reservation-page">
-    <h1>This is Reservation page</h1>
+    <SpecialReservations/>
+    <OpeningHours/>
   </div>
 </template>
 
 <script>
+import OpeningHours from "@/components/home/menu/OpeningHours";
+import SpecialReservations from "@/components/reservations/SpecialReservations";
 export default {
   name: 'Reservation',
   components: {
-
+    OpeningHours,
+    SpecialReservations
+  },
+  props: ["srcset"],
+  data() {
+    return {
+      images: [
+        {id: 1, file: "/waffels.png"},
+        {id: 2, file: "/waffels.png"},
+        {id: 3, file: "/waffels.png"},
+        {id:4, alt: "waffels"}],
+    }
+  },
+  methods: {
+    getImgUrl(img) {
+      return require('@/assets' + img)
+    },
   }
 }
 </script>
