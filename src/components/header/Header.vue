@@ -1,5 +1,5 @@
 <template>
-  <header class="header">
+  <header class="header" v-on:scroll="handleScrollForHeader" :style="style">
     <input id="burger" type="checkbox" class="header-burger-menu">
     <label for="burger" class="header-burger-img"></label>
     <nav class="header-nav">
@@ -20,6 +20,27 @@ export default {
     Menu,
     BookTable,
   },
+  data() {
+    return {style: ''}
+  },
+  created () {
+    window.addEventListener('scroll', this. handleScrollForHeader);
+  },
+  destroyed () {
+    window.removeEventListener('scroll', this. handleScrollForHeader);
+  },
+  methods: {
+    handleScrollForHeader() {
+      if (window.scrollY >= 1) {
+        this.style = {
+          boxShadow: "0px 10px 10px 5px #000000",
+          backgroundColor: "gainsboro"
+        }
+      } else if (window.scrollY < 1) {
+        this.style = {boxShadow: "none"}
+      }
+    }
+  }
 }
 </script>
 
@@ -36,7 +57,7 @@ export default {
   left: 50%;
   transform: translateX(-50%);
   z-index: 999999999999;
-  width: 99%;
+  width: 100%;
   background-color: white;
   &-burger-menu {
     cursor: pointer;
@@ -129,7 +150,7 @@ export default {
   &-nav {
     width: 100%;
     min-height: 87px;
-    background-color: #ffffff;
+    background-color: inherit;
     display: flex;
     justify-content: space-between;
     align-items: center;

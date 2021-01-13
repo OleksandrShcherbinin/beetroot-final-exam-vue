@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import MenuPiece from "@/components/home/menu/MenuPiece";
+
 export default {
   name: "MenuPage"
 }

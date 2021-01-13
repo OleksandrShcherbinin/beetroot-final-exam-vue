@@ -62,6 +62,9 @@ name: "FoodMenuHeader",
       @include title(#14141d, $PD, 20px, 700);
       cursor: pointer;
     }
+    &__link:visited {
+      color: #fe4c8d;
+    }
     &__item:before {
       position: absolute;
       width: 26px;

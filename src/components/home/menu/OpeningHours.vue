@@ -5,9 +5,9 @@
       <h3 class="hours-opening__info">Monday to Friday <span>10am - 10pm</span></h3>
       <h3 class="hours-opening__info">Saturday to Sunday <span>09am - 11pm</span></h3>
       <picture class="hours-opening__img">
-        <source srcset="../../../assets/deserts.webp" type="image/webp">
-        <source srcset="../../../assets/deserts.jpg" type="image/jpeg">
-        <img src="../../../assets/deserts.jpg" alt="deserts">
+        <source srcset="../../../assets/dessert.webp" type="image/webp">
+        <source srcset="../../../assets/dessert.png" type="image/png">
+        <img src="../../../assets/dessert.png" alt="deserts">
     </picture>
     </div>
 
@@ -38,10 +38,10 @@ export default {
     display: flex;
     align-items: center;
     position: relative;
+    flex-wrap: wrap;
     &__title {
       width: 244px;
       @include title(#14141d, $PD, 35px, 700);
-      line-height: 22px;
       padding-right: 7%;
     }
     &__info {
@@ -62,6 +62,16 @@ export default {
       position: absolute;
       top: -130px;
       right: 0;
+      opacity: 0.8;
+      @media only screen and (max-width: 1200px) {
+        opacity: 0.6;
+      }
+      @media only screen and (max-width: 992px) {
+        opacity: 0.4;
+      }
+      @media only screen and (max-width: 768px) {
+        opacity: 0.2;
+      }
     }
   }
 }

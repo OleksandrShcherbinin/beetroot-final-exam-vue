@@ -32,7 +32,7 @@ name: "MenuBig",
   @media only screen and (max-width: 767px) {
     min-height: 1350px;
   }
-  @media only screen and (max-width: 577.98px) {
+  @media only screen and (max-width: 578px) {
     min-height: 1670px;
   }
   @media only screen and (max-width: 420px) {
@@ -50,7 +50,7 @@ name: "MenuBig",
     left: 0;
     opacity: 1;
     z-index: 5;
-    @media only screen and (max-width: 375px) {
+    @media only screen and (max-width: 578px) {
       display: none;
     }
   }

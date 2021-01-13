@@ -74,7 +74,6 @@ name: "MenuSpeciality",
       line-height: 22px;
     }
     &-item {
-
       &__title {
         @include text(#14141d, $SR, 15px, 700, uppercase);
       }
