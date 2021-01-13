@@ -27,15 +27,24 @@ name: "SpecialOrder"
     width: 58px;
     height: 28px;
     line-height: 17px;
+    @media only screen and (max-width: 768px) {
+      font-size: 10px;
+    }
   }
   &__delivery span {
     @include text(#fe4c8d, $SR, 13px, 700, uppercase);
+     @media only screen and (max-width: 768px) {
+      font-size: 8px;
+    }
   }
   &__phone {
     position: relative;
   }
   &__phone  a {
     @include text(#14141d, $PD, 26px, 700, uppecase);
+    @media only screen and (max-width: 768px) {
+      font-size: 16px;
+    }
   }
   &__phone:before {
     content: "";

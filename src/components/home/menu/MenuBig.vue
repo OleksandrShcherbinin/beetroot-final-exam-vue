@@ -50,6 +50,9 @@ name: "MenuBig",
     left: 0;
     opacity: 1;
     z-index: 5;
+    @media only screen and (max-width: 375px) {
+      display: none;
+    }
   }
 }
 

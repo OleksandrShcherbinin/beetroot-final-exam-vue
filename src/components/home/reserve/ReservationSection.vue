@@ -5,8 +5,10 @@
       <picture class="reserve-wrapper__img">
         <source media="(min-width: 567px)" srcset="../../../assets/restaurant.webp" type="image/webp">
         <source media="(min-width: 567px)" srcset="../../../assets/restaurant.jpg" type="image/jpeg">
-        <source media="(max-width: 566.98px)" srcset="../../../assets/restaurant-small.webp" type="image/webp">
-        <source media="(max-width: 566.98px)" srcset="../../../assets/restaurant-small.jpg" type="image/jpeg">
+        <source media="(min-width: 375px)" srcset="../../../assets/restaurant-small.webp" type="image/webp">
+        <source media="(min-width: 375px)" srcset="../../../assets/restaurant-small.jpg" type="image/jpeg">
+        <source media="(min-width: 200px) and (max-width: 375px)" srcset="../../../assets/restaurant-smaller.webp" type="image/webp">
+        <source media="(min-width: 200px) and (max-width: 375px)" srcset="../../../assets/restaurant-smaller.jpg" type="image/jpeg">
         <img src="../../../assets/restaurant.jpg" alt="restaurant">
       </picture>
       <ReserveForm/>
