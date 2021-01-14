@@ -45,6 +45,7 @@ name: "MenuPiece",
       width: 100%;
     }
     &-item {
+      width: 60%;
       &__title {
         @include text(#14141d, $SR, 16px, 700, uppercase);
       }
@@ -74,9 +75,10 @@ name: "MenuPiece",
 }
 .my-menu-piece:after {
   content: " ";
-  width: 100%;
+  width: 80%;
   background-color: #eeeeee;
   bottom: 0;
+  right: 0;
   height: 1px;
   position: absolute;
 

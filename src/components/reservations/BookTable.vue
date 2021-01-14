@@ -1,5 +1,5 @@
 <template>
-  <form class="form" action="#" method="get">
+  <form class="form" action="#/reservation" method="get">
     <div class="form-wrapper">
       <label class="form-wrapper__label" for="name">
         <input id="name" class="form-wrapper__input" type="text" name="name" placeholder="Name*" required>
@@ -61,7 +61,7 @@ export default {
       position: relative;
       margin-right: 20px;
       @media only screen and (max-width: 578px) {
-        width: 300px;
+        width: 250px;
       }
     }
     &__area {
