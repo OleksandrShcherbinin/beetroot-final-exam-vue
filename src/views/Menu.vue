@@ -8,11 +8,10 @@
       <source  media="(max-width:991.98px)" srcset="../assets/menu-small.jpg" type="image/jpeg">
       <img src="../assets/menu.jpg" alt="menu">
     </picture>
-    <FoodMenuHeader style="padding-top: 50px; width: 100%"/>
-    <MenuPagePiece/>
+    <FoodMenuHeader style="padding-top: 50px; max-width: 1170px" v-bind:menu_page="menu_page"/>
     <button class="menu-page__button" type="submit">Explore food menu</button>
     <MenuSpeciality/>
-    <OpeningHours/>
+    <OpeningHours v-bind:images="images"/>
   </div>
 </template>
 
@@ -21,6 +20,16 @@ import FoodMenuHeader from "@/components/home/menu/FoodMenuHeader";
 import MenuPagePiece from "@/components/menu/MenuPagePiece";
 import MenuSpeciality from "@/components/menu/MenuSpeciality";
 import OpeningHours from "@/components/home/menu/OpeningHours";
+
+import {
+  allBig,
+  allBreakfast,
+  allLunch,
+  allSnacks,
+  allSoups,
+  allPizza,
+  allDinner
+} from './bigmenu';
 export default {
   name: 'Menu',
   components: {
@@ -28,6 +37,19 @@ export default {
     MenuPagePiece,
     MenuSpeciality,
     OpeningHours
+  },
+  data() {
+    return {
+      images: {
+        img1: "/dessert.webp",
+        img2: "/dessert.png",
+        img3: "/dessert.png",
+        alt: "dessert"
+      },
+      menu_page: [allBig, allBreakfast, allLunch,
+        allSnacks, allSoups, allPizza, allDinner
+      ],
+    }
   },
 }
 </script>

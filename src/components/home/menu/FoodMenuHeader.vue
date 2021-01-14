@@ -2,20 +2,33 @@
   <nav class="food">
     <h2 class="food__title">Food Menu</h2>
     <ul class="food-menu">
-      <li v-for="item of menu" class="food-menu__item"><a class="food-menu__link">
-        {{item}}</a></li>
+      <li v-for="item of menu" class="food-menu__item">
+        <a :href="`#${item}`" v-on:click="setIndex(menu.indexOf(item))" v-bind:class="item.toLowerCase()" class="food-menu__link">
+        {{item}}</a>
+      </li>
     </ul>
+    <MenuPiece v-bind:item_list="menu_page[index]"/>
   </nav>
 </template>
 
 <script>
+import MenuPiece from "@/components/home/menu/MenuPiece";
 export default {
 name: "FoodMenuHeader",
+  components: {MenuPiece},
+  props: ['menu_page'],
   data: function () {
     return {
-      menu: ['All', 'Breakfast', 'Lunch', 'Snacks', 'Pizza', 'Soups','Dinner']
+      menu: ['All', 'Breakfast', 'Lunch', 'Snacks', 'Pizza', 'Soups','Dinner'],
+      index: 0,
+      active: true,
     }
   },
+  methods: {
+    setIndex(index) {
+  	  this.index = index
+    },
+  }
 }
 </script>
 
@@ -62,10 +75,7 @@ name: "FoodMenuHeader",
       @include title(#14141d, $PD, 20px, 700);
       cursor: pointer;
     }
-    &__link:visited {
-      color: #fe4c8d;
-    }
-    &__item:before {
+    &__link:before {
       position: absolute;
       width: 26px;
       height: 26px;
@@ -73,59 +83,50 @@ name: "FoodMenuHeader",
       left: 50%;
       transform: translateX(-50%);
     }
-    &__item:first-child:before {
-      content: url("../../../assets/icons/spoon-and-fork.svg");
-    }
-    &__item:first-child:hover:before {
-      content: url("../../../assets/icons/spoon-and-fork-h.svg");
-    }
-    &__item:nth-child(2):before {
-      content: url("../../../assets/icons/coffee.svg");
-    }
-    &__item:nth-child(2):hover:before {
-      content: url("../../../assets/icons/coffee-h.svg");
-    }
-    &__item:nth-child(3):before {
-      content: url("../../../assets/icons/cooking.svg");
-    }
-    &__item:nth-child(3):hover:before {
-      content: url("../../../assets/icons/cooking-h.svg");
-    }
-    &__item:nth-child(4):before {
-      content: url("../../../assets/icons/muffin.svg");
-    }
-    &__item:nth-child(4):hover:before {
-      content: url("../../../assets/icons/muffin-h.svg");
-    }
-    &__item:nth-child(5):before {
-      content: url("../../../assets/icons/pizza.svg");
-    }
-    &__item:nth-child(5):hover:before {
-      content: url("../../../assets/icons/pizza-h.svg");
-    }
-    &__item:nth-child(6):before {
-      content: url("../../../assets/icons/bowl.svg");
-    }
-    &__item:nth-child(6):hover:before {
-      content: url("../../../assets/icons/bowl-h.svg");
-    }
-    &__item:last-child:before {
-      content: url("../../../assets/icons/fish.svg");
-    }
-    &__item:last-child:hover:before {
-      content: url("../../../assets/icons/fish-h.svg");
-    }
   }
 }
-.food:after {
-  content: " ";
-  max-width: 1970px;
-  width: 100%;
-  background-color: #a3b0ba;
-  height: 1px;
-  position: absolute;
-  bottom: 25px;
-  z-index: 0;
+
+.all:before {
+  content: url("../../../assets/icons/spoon-and-fork.svg");
+}
+.all:active:before {
+   content: url("../../../assets/icons/spoon-and-fork-h.svg");
+}
+.breakfast:before {
+   content: url("../../../assets/icons/coffee.svg");
+}
+.breakfast:active:before {
+   content: url("../../../assets/icons/coffee-h.svg");
+}
+.lunch:before {
+   content: url("../../../assets/icons/cooking.svg");
+}
+.lunch:active:before {
+   content: url("../../../assets/icons/cooking-h.svg");
+}
+.snacks:before {
+   content: url("../../../assets/icons/muffin.svg");
+}
+.snacks:active:before {
+   content: url("../../../assets/icons/muffin-h.svg");
+}
+.soups:before {
+   content: url("../../../assets/icons/bowl.svg");
+}
+.soups:active:before {
+   content: url("../../../assets/icons/bowl-h.svg");
+}
+.pizza:before {
+    content: url("../../../assets/icons/pizza.svg");
+}
+.pizza:active:before {
+    content: url("../../../assets/icons/pizza-h.svg");
+}
+.dinner:before {
+   content: url("../../../assets/icons/fish.svg");
+}
+.dinner:active:before {
+   content: url("../../../assets/icons/fish-h.svg");
 }
 
 </style>

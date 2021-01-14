@@ -1,6 +1,7 @@
 <template>
   <ul class="my-menu">
-    <li class="my-menu-piece" v-for="item of menu">
+    <li class="my-menu-piece" v-for="item of item_list">
+      <img v-if="item.img" class="my-menu__img" style="width: 70px; height: 70px; align-self: center; padding: 0 10px 0 10px" :src="getImgUrl(item.img)" :alt="item.alt">
       <div class="my-menu-piece-item">
         <h3 class="my-menu-piece-item__title">{{item.title}}</h3>
         <h4 class="my-menu-piece-item__description">{{item.description}}</h4>
@@ -11,54 +12,15 @@
 </template>
 
 <script>
+
 export default {
 name: "MenuPiece",
-  data() {
-    return {
-      menu: [
-        {
-          title: "Ultimate organic fruit salad",
-          description: "survived not only five centuries but the leap",
-          price: "$50.00"
-        },
-        {
-          title: "Ultimate organic fruit salad",
-          description: "survived not only five centuries but the leap",
-          price: "$50.00"
-        },
-        {
-          title: "Plain pancakes",
-          description: "Donec eget augue at diam euismod viverra",
-          price: "$68.00"
-        },
-        {
-          title: "Plain pancakes",
-          description: "Donec eget augue at diam euismod viverra",
-          price: "$68.00"
-        },
-        {
-          title: "Toasted jam",
-          description: "Phasellus a ex accumsan, sollicitudin",
-          price: "$22.00"
-        },
-        {
-          title: "Toasted jam",
-          description: "Phasellus a ex accumsan, sollicitudin",
-          price: "$22.00"
-        },
-        {
-          title: "Toasted jam",
-          description: "Phasellus a ex accumsan, sollicitudin",
-          price: "$39.00"
-        },
-        {
-          title: "Toasted jam",
-          description: "Phasellus a ex accumsan, sollicitudin",
-          price: "$39.00"
-        },
-      ]
-    }
-  }
+  props: ['item_list'],
+  methods: {
+    getImgUrl(img) {
+      return require('@/assets' + img)
+    },
+  },
 }
 </script>
 
@@ -78,7 +40,7 @@ name: "MenuPiece",
     width: 48%;
     display: flex;
     justify-content: space-between;
-    border-bottom: 3px solid #eeeeee;
+    position: relative;
     @media only screen and (max-width: 576px) {
       width: 100%;
     }
@@ -99,6 +61,25 @@ name: "MenuPiece",
     font-size: 16px;
     vertical-align: top;
   }
+}
+.my-menu:before {
+  content: " ";
+  max-width: 1970px;
+  width: 100%;
+  background-color: #a3b0ba;
+  height: 1px;
+  position: absolute;
+  margin-top: -30px;
+  z-index: 0;
+}
+.my-menu-piece:after {
+  content: " ";
+  width: 100%;
+  background-color: #eeeeee;
+  bottom: 0;
+  height: 1px;
+  position: absolute;
+
 }
 
 </style>

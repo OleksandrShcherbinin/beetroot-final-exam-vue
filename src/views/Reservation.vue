@@ -1,42 +1,92 @@
 <template>
   <div class="reservation-page">
+    <h2 class="reservation-page__title">Reservation</h2>
+    <picture class="reservation-page__image">
+      <source  media="(min-width:992px)" srcset="../assets/reservation.webp" type="image/webp">
+      <source  media="(min-width:992px)" srcset="../assets/reservation.jpg" type="image/jpeg">
+      <source  media="(max-width:991.98px)" srcset="../assets/reservation-small.webp" type="image/webp">
+      <source  media="(max-width:991.98px)" srcset="../assets/reservation-small.jpg" type="image/jpeg">
+      <img src="../assets/reservation.jpg" alt="reservation">
+    </picture>
+    <h3 class="reservation-page-form__title">Book a Table</h3>
+    <p class="reservation-page-form__text">Lorem Ipsum has been the industry's standard
+      dummy text ever since the 1500s, when an unknown printer took a galley of
+      type and scrambled it to make a type specimen book.
+    </p>
+    <BookTable/>
     <SpecialReservations/>
-    <OpeningHours/>
+    <OpeningHours v-bind:images="images"/>
   </div>
 </template>
 
 <script>
 import OpeningHours from "@/components/home/menu/OpeningHours";
 import SpecialReservations from "@/components/reservations/SpecialReservations";
+import BookTable from "@/components/reservations/BookTable";
 export default {
   name: 'Reservation',
   components: {
     OpeningHours,
-    SpecialReservations
+    SpecialReservations,
+    BookTable
   },
-  props: ["srcset"],
   data() {
     return {
-      images: [
-        {id: 1, file: "/waffels.png"},
-        {id: 2, file: "/waffels.png"},
-        {id: 3, file: "/waffels.png"},
-        {id:4, alt: "waffels"}],
+      images: {
+        img1: "/waffels.png",
+        img2: "/waffels.png",
+        img3: "/waffels.png",
+        alt: "wafels"
+      }
     }
   },
   methods: {
     getImgUrl(img) {
       return require('@/assets' + img)
     },
-  }
+  },
 }
 </script>
-<style lang="scss">
-
+<style scoped lang="scss">
+@import "src/scss/variables";
+@import "src/scss/mixins";
 .reservation-page {
   max-width: 1970px;
   margin: 0 auto;
   padding-top: 87px;
+  &-form__title {
+    display: flex;
+    justify-content: center;
+    margin: 90px auto 40px auto;
+    @include title(#14141d, $PD, 35px, 700);
+  }
+  &-form__text {
+    margin: 0 auto;
+    text-align: center;
+    @include title(#5c6369, $SR, 14px, 400);
+    width: 40%;
+    line-height: 26px;
+    @media only screen and (max-width: 578px) {
+      width: 80%;
+    }
+  }
+  &__title {
+    @include title(#ffffff, $PD, 56px, 700);
+    position: absolute;
+    top: 115px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &__image {
+    width: 100%;
+    display: flex;
+  }
+  &__image * {
+    object-fit: cover;
+    width: 100%;
+    min-height: 200px;
+    height: auto;
+  }
 }
 
 </style>

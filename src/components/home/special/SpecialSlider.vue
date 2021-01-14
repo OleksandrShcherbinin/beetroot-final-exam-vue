@@ -118,7 +118,7 @@ name: "SpecialSlider",
     },
     handleScroll() {
       if (window.scrollY > 1300) {
-          this.style = {transform: "rotate(360deg)", transition: "transform 2s"}
+          this.style = {transform: " translateX(-100px) rotate(-360deg)", transition: "transform 2s"}
       }
     }
   }

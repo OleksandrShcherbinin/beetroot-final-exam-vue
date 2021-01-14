@@ -1,84 +1,12 @@
 <template>
-    <ul class="my-menu-page">
-      <li class="my-menu-page-piece" v-for="item of menu">
-        <div class="my-menu-page-piece-item">
-          <h3 class="my-menu-page-piece-item__title">{{item.title}}</h3>
-          <h4 class="my-menu-page-piece-item__description">{{item.description}}</h4>
-        </div>
-        <h2 class="my-menu-page__price">{{item.price}}</h2>
-      </li>
-    </ul>
+
 </template>
 
 <script>
+import FoodMenuHeader from "@/components/home/menu/FoodMenuHeader";
 export default {
   name: "MenuPagePiece",
-  data() {
-    return {
-      menu: [
-        {
-          title: "jumbo carb thanroor",
-          description: "survived not only five centuries but the leap",
-          price: "$50.00"
-        },
-        {
-          title: "Ultimate organic fruit salad",
-          description: "survived not only five centuries but the leap",
-          price: "$50.00"
-        },
-        {
-          title: "Plain pancakes",
-          description: "Donec eget augue at diam euismod viverra",
-          price: "$68.00"
-        },
-        {
-          title: "Plain pancakes",
-          description: "Donec eget augue at diam euismod viverra",
-          price: "$68.00"
-        },
-        {
-          title: "pRawas tikka",
-          description: "Phasellus a ex accumsan, sollicitudin",
-          price: "$22.00"
-        },
-        {
-          title: "Fish pakoda",
-          description: "Phasellus a ex accumsan, sollicitudin",
-          price: "$22.00"
-        },
-        {
-          title: "Rawas grown curry",
-          description: "Phasellus a ex accumsan, sollicitudin",
-          price: "$39.00"
-        },
-        {
-          title: "Surmai chilli",
-          description: "Phasellus a ex accumsan, sollicitudin",
-          price: "$39.00"
-        },
-          {
-          title: "Prawns butter garlic",
-          description: "Phasellus a ex accumsan, sollicitudin",
-          price: "$39.00"
-        },
-          {
-          title: "Sode kadai",
-          description: "Phasellus a ex accumsan, sollicitudin",
-          price: "$39.00"
-        },
-          {
-          title: "Sukhat chuntey",
-          description: "Phasellus a ex accumsan, sollicitudin",
-          price: "$39.00"
-        },
-          {
-          title: "Toasted jam",
-          description: "Phasellus a ex accumsan, sollicitudin",
-          price: "$39.00"
-        },
-      ]
-    }
-  }
+  components: {FoodMenuHeader}
 }
 </script>
 

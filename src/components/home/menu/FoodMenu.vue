@@ -1,7 +1,6 @@
 <template>
   <div class="menu">
-    <FoodMenuHeader/>
-    <MenuPiece/>
+    <FoodMenuHeader v-bind:menu_page="menu_page"/>
     <picture class="menu__image">
       <source srcset="../../../assets/burito.webp" type="image/webp">
       <source srcset="../../../assets/burito.png" type="image/jpeg">
@@ -13,12 +12,19 @@
 <script>
 import FoodMenuHeader from "@/components/home/menu/FoodMenuHeader";
 import MenuPiece from "@/components/home/menu/MenuPiece";
+import {all, breakfast, lunch, snacks, soups, pizza, dinner} from './menu';
 export default {
   name: "FoodMenu",
   components: {
     FoodMenuHeader,
     MenuPiece
+  },
+  data() {
+    return {
+      menu_page: [all, breakfast, lunch, snacks, soups, pizza, dinner],
+    }
   }
+
 }
 </script>
 
