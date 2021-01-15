@@ -46,11 +46,15 @@ export default {
   max-width: 1170px;
   width: 60%;
   height: 350px;
+  @supports (-webkit-overflow-scrolling: touch) {
+    min-height: 350px;
+  }
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   overflow-x: hidden;
   overflow-y: auto;
+  -webkit-overflow-scrolling: auto;
   &__title {
     @include title(#ffffff, $PD, 35px,700);
     margin: 0;

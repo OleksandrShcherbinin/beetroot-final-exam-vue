@@ -66,6 +66,7 @@ export default {
       }
     }
     &__area {
+      box-sizing: border-box;
       max-width: 1170px;
       width: 100%;
       height: 150px;
