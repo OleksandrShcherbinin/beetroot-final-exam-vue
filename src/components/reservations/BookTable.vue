@@ -60,6 +60,7 @@ export default {
       border-bottom: 2px solid #e1e1e1;
       position: relative;
       margin-right: 20px;
+      padding-left: 50px;
       @media only screen and (max-width: 578px) {
         width: 250px;
       }
@@ -72,29 +73,46 @@ export default {
       margin-top: 30px;
       resize: none;
       border-bottom: 1px solid #a3b0ba;
+      padding-left: 50px;
     }
     &__label {
       position: relative;
     }
     &__label:first-child:after {
       content: url("../../assets/icons/walk.svg");
-      @include label;
+      @include label-left;
+    }
+    &__label:nth-child(2):after {
+      content: url("../../assets/icons/calendar.svg");
+      @include label-left;
+      width: 21px;
+      height: 21px;
+    }
+    &__label:nth-child(3):after {
+      content: url("../../assets/icons/wall-clock.svg");
+      @include label-left;
+      width: 21px;
+      height: 21px;
     }
     &__label:nth-child(4):after {
       content: url("../../assets/icons/envelope.svg");
-      @include label;
+      @include label-left;
     }
     &__label:nth-child(5):after {
       content: url("../../assets/icons/heads.svg");
-      @include label;
+      @include label-left;
     }
     &__label:nth-child(6):after {
       content: url("../../assets/icons/smartphone.svg");
-      @include label;
+      @include label-left;
     }
-    &__area:after {
-      content: url("../../assets/icons/smartphone.svg");
-      @include label;
+    &__label:last-child:after {
+      content: url("../../assets/icons/conversation.svg");
+      position: absolute;
+      top: 20px;
+      left: 0;
+      width: 23px;
+      height: 23px;
     }
     &__input::placeholder {
       color: #363d43;

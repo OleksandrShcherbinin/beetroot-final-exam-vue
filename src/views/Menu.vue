@@ -1,13 +1,6 @@
 <template>
   <div class="menu-page">
-    <h2 class="menu-page__title">Menu</h2>
-    <picture class="menu-page__image">
-      <source  media="(min-width:992px)" srcset="../assets/menu.webp" type="image/webp">
-      <source  media="(min-width:992px)" srcset="../assets/menu.jpg" type="image/jpeg">
-      <source  media="(max-width:991.98px)" srcset="../assets/menu-small.webp" type="image/webp">
-      <source  media="(max-width:991.98px)" srcset="../assets/menu-small.jpg" type="image/jpeg">
-      <img src="../assets/menu.jpg" alt="menu">
-    </picture>
+    <AfterHeader v-bind:header="header"/>
     <FoodMenuHeader style="padding-top: 50px; max-width: 1170px" v-bind:menu_page="menu_page"/>
     <button class="menu-page__button" type="submit">Explore food menu</button>
     <MenuSpeciality/>
@@ -20,6 +13,7 @@ import FoodMenuHeader from "@/components/home/menu/FoodMenuHeader";
 import MenuPagePiece from "@/components/menu/MenuPagePiece";
 import MenuSpeciality from "@/components/menu/MenuSpeciality";
 import OpeningHours from "@/components/home/menu/OpeningHours";
+import AfterHeader from "@/components/header/AfterHeader";
 
 import {
   allBig,
@@ -33,6 +27,7 @@ import {
 export default {
   name: 'Menu',
   components: {
+    AfterHeader,
     FoodMenuHeader,
     MenuPagePiece,
     MenuSpeciality,
@@ -49,6 +44,8 @@ export default {
       menu_page: [allBig, allBreakfast, allLunch,
         allSnacks, allSoups, allPizza, allDinner
       ],
+      header: ["Menu", "/menu.webp", "/menu.jpg",
+        "/menu-small.webp", "/menu-small.jpg", "menu"]
     }
   },
 }
@@ -64,23 +61,6 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  &__title {
-    @include title(#ffffff, $PD, 56px, 700);
-    position: absolute;
-    top: 115px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  &__image {
-    width: 100%;
-    display: flex;
-  }
-  &__image * {
-    object-fit: cover;
-    width: 100%;
-    min-height: 200px;
-    height: auto;
-  }
   &__button {
     margin: 70px 0 100px 0;
     width: 199px;

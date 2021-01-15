@@ -18,3 +18,8 @@
     top: 23px;
     right: 23px;
 }
+@mixin label-left {
+    position: absolute;
+    top: 23px;
+    left: 0;
+}

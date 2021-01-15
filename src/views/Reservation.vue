@@ -1,13 +1,6 @@
 <template>
   <div class="reservation-page">
-    <h2 class="reservation-page__title">Reservation</h2>
-    <picture class="reservation-page__image">
-      <source  media="(min-width:992px)" srcset="../assets/reservation.webp" type="image/webp">
-      <source  media="(min-width:992px)" srcset="../assets/reservation.jpg" type="image/jpeg">
-      <source  media="(max-width:991.98px)" srcset="../assets/reservation-small.webp" type="image/webp">
-      <source  media="(max-width:991.98px)" srcset="../assets/reservation-small.jpg" type="image/jpeg">
-      <img src="../assets/reservation.jpg" alt="reservation">
-    </picture>
+    <AfterHeader v-bind:header="header"/>
     <h3 class="reservation-page-form__title">Book a Table</h3>
     <p class="reservation-page-form__text">Lorem Ipsum has been the industry's standard
       dummy text ever since the 1500s, when an unknown printer took a galley of
@@ -23,12 +16,14 @@
 import OpeningHours from "@/components/home/menu/OpeningHours";
 import SpecialReservations from "@/components/reservations/SpecialReservations";
 import BookTable from "@/components/reservations/BookTable";
+import AfterHeader from "@/components/header/AfterHeader";
 export default {
   name: 'Reservation',
   components: {
+    AfterHeader,
     OpeningHours,
     SpecialReservations,
-    BookTable
+    BookTable,
   },
   data() {
     return {
@@ -37,7 +32,9 @@ export default {
         img2: "/waffels.png",
         img3: "/waffels.png",
         alt: "wafels"
-      }
+      },
+       header: ["Reservation", "/reservation.webp", "/reservation.jpg",
+        "/reservation-small.webp", "/reservation-small.webp", "reservation"]
     }
   },
   methods: {
@@ -69,23 +66,6 @@ export default {
     @media only screen and (max-width: 578px) {
       width: 80%;
     }
-  }
-  &__title {
-    @include title(#ffffff, $PD, 56px, 700);
-    position: absolute;
-    top: 115px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  &__image {
-    width: 100%;
-    display: flex;
-  }
-  &__image * {
-    object-fit: cover;
-    width: 100%;
-    min-height: 200px;
-    height: auto;
   }
 }
 
