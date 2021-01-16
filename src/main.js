@@ -3,8 +3,6 @@ import App from './App.vue'
 import router from './router'
 import VueSplide from '@splidejs/vue-splide';
 import * as VueGoogleMaps from "vue2-google-maps";
-import 'core-js/stable';
-import 'regenerator-runtime/runtime';
 
 Vue.use(VueGoogleMaps, {
   load: {
