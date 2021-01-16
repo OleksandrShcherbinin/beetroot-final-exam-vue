@@ -58,7 +58,7 @@ export default {
   align-items: center;
   &-inner {
     max-width: 1170px;
-    width: 60%;
+    width: 85%;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
