@@ -47,7 +47,7 @@ export default {
   width: 60%;
   height: 350px;
   @supports (-webkit-overflow-scrolling: touch) {
-    min-height: 350px;
+    height: 100%;
   }
   display: flex;
   flex-direction: column;
@@ -55,6 +55,12 @@ export default {
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: auto;
+  @media only screen and (max-width: 992px) {
+    width: 80%;
+  }
+  @media only screen and (max-width: 768px) {
+    width: 90%;
+  }
   &__title {
     @include title(#ffffff, $PD, 35px,700);
     margin: 0;

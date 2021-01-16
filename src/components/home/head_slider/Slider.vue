@@ -51,7 +51,9 @@ export default {
 
 .slider-image {
   max-height: 570px;
-  height: calc(100vw * 0.35);
+  @supports (width: calc(100%)) {
+    height: calc(100vw * 0.35);
+  }
   width: 100%;
   display: flex;
   flex-direction: column;

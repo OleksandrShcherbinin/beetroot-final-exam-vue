@@ -1,21 +1,27 @@
 <template>
   <div class="recipe-page">
     <AfterHeader v-bind:header="header"/>
+    <MainRecipe/>
     <OrangeBlock/>
+    <FeaturedRecipes/>
     <OpeningHours v-bind:images="images"/>
   </div>
 </template>
 
 <script>
 import AfterHeader from "@/components/header/AfterHeader";
+import MainRecipe from "@/components/recipe/MainRecipe";
 import OrangeBlock from "@/components/recipe/OrangeBlock";
 import OpeningHours from "@/components/home/menu/OpeningHours";
+import FeaturedRecipes from "@/components/recipe/FeaturedRecipes";
 
 export default {
   name: 'Recipe',
   components: {
     OpeningHours,
+    MainRecipe,
     AfterHeader,
+    FeaturedRecipes,
     OrangeBlock,
   },
   data() {

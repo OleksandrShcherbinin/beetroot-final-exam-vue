@@ -25,6 +25,13 @@ export default {
   width: 70%;
   display: flex;
   align-items: center;
+  height: 100%;
+  @media only screen and (max-width: 992px) {
+    width: 80%;
+  }
+  @media only screen and (max-width: 768px) {
+    width: 95%;
+  }
   &-step {
     width: 70px;
     height: 76px;
@@ -32,6 +39,10 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    @media only screen and (max-width: 576px) {
+      width: 56px;
+      height: 62px;
+    }
     &-inner {
       width: 58px;
       height: 64px;
@@ -40,6 +51,10 @@ export default {
       justify-content: center;
       align-items: center;
       flex-direction: column;
+      @media only screen and (max-width: 576px) {
+        width: 44px;
+        height: 50px;
+      }
       &__num {
         @include text(#ffffff, $SR, 30px, 700, uppercase);
         width: 31px;
@@ -57,6 +72,9 @@ export default {
     @include title(#ffffff, $SR, 14px, 400);
     margin-left: 35px;
     line-height: 26px;
+    @media only screen and (max-width: 576px) {
+      margin-left: 5px;
+    }
   }
 }
 
