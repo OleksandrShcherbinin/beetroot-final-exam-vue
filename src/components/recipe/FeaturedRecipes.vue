@@ -1,8 +1,9 @@
 <template>
   <div class="featured">
-      <div class="featured-inner">
+    <h2 class="featured__title">Featured Recipies</h2>
+    <div class="featured-inner">
       <FeaturedBlock v-for="recipe in recipes" v-bind:recipe="recipe" :key="recipe.title"/>
-      </div>
+    </div>
     </div>
 </template>
 
@@ -50,12 +51,19 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "src/scss/variables";
+@import "src/scss/mixins";
 .featured {
   min-height: 900px;
   max-width: 1970px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 40px;
+  &__title {
+    @include title(#14141d, $PD, 35px, 700);
+  }
   &-inner {
     max-width: 1170px;
     width: 85%;
