@@ -21,7 +21,10 @@ export default {
     BookTable,
   },
   data() {
-    return {style: ''}
+    return {
+        style: '',
+        display: ''
+    }
   },
   created () {
     window.addEventListener('scroll', this. handleScrollForHeader);

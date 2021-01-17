@@ -3,19 +3,22 @@
     <Header/>
     <router-view/>
     <Footer/>
+    <GoTop :has-outline="false"/>
   </div>
 </template>
 <script>
 import Header from "@/components/header/Header";
 import Home from "@/views/Home";
 import Footer from "@/components/footer/Footer";
+import GoTop from '@inotom/vue-go-top';
 
 export default {
   name: 'Home',
   components: {
     Header,
     Home,
-    Footer
+    Footer,
+    GoTop
   },
 }
 </script>

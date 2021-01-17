@@ -26,8 +26,8 @@ export default {
         perPage: 1,
         gap: '1rem',
         autoplay: true,
-        interval: 1000,
-        speed: 500,
+        interval: 2000,
+        speed: 1000,
         arrows: false,
         breakpoints: {
           992: {

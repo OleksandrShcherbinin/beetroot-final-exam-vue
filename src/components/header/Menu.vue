@@ -1,7 +1,10 @@
 <template>
   <ul class="header-nav-menu">
     <li v-for="item in menu" class="header-nav-menu__item">
-      <router-link class="header-nav-menu__link" v-on:click.native="scrollToTop" :to="item.link">{{item.title}}</router-link>
+      <router-link class="header-nav-menu__link"
+                   v-on:click.native="scrollToTop()"
+                   :to="item.link">{{item.title}}
+      </router-link>
     </li>
     <ShoppingCart/>
   </ul>
@@ -27,7 +30,7 @@ name: "Menu",
   methods: {
     scrollToTop() {
       window.scrollTo(0,0);
-    }
+    },
   }
 }
 </script>
