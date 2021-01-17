@@ -3,7 +3,7 @@
     <h4 class="nav__title">Navigation</h4>
     <ul class="nav-menu">
       <li v-for="item in menu" class="nav-menu__item">
-        <router-link class="nav-menu__link" :to="item.link">{{item.title}}</router-link>
+        <router-link class="nav-menu__link" v-on:click="scrollToTop" :to="item.link">{{item.title}}</router-link>
       </li>
     </ul>
   </nav>
@@ -23,6 +23,11 @@ export default {
         {title: 'Blog', link: '/blog'},
         {title: 'Contact', link: '/contact'},
       ]
+    }
+  },
+  methods: {
+    scrollToTop() {
+      window.scrollTo(0,0);
     }
   }
 }
