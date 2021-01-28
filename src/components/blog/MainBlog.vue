@@ -13,7 +13,7 @@ name: "MainBlog"
 
 <style scoped lang="scss">
 .main-blog {
-  flex: 65%;
+  width: 70%;
 }
 
 </style>

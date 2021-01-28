@@ -19,8 +19,7 @@ export default {
 @import "src/scss/mixins";
 .categories {
   &__title {
-    @include title(#14141d, $PD, 26px, 700);
-    margin: 0 0 10px 0;
+    @include aside-title;
   }
   &-list {
     &__item {
