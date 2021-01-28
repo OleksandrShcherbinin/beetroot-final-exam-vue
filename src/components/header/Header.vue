@@ -153,6 +153,7 @@ export default {
   &-nav {
     width: 100%;
     min-height: 87px;
+    padding: 0 15px 0 15px;
     background-color: inherit;
     display: flex;
     justify-content: space-between;

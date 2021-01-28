@@ -1,35 +1,36 @@
 <template>
-  <div class="ingredients">
-    <h3 class="ingredients__title">Ingredients</h3>
-    <ul class="ingredients-list-list">
-      <li v-for="item in ingredients" class="ingredients-list__item">{{item.title}}</li>
+  <div class="categories">
+    <h3 class="categories__title">Categories</h3>
+    <ul class="categories-list-list">
+      <li v-for="item in categories" class="categories-list__item">{{item.title}}</li>
     </ul>
   </div>
 </template>
 
 <script>
 export default {
-name: "Ingredients",
-  props: ["ingredients"]
+  name: "Categories",
+  props: ['categories'],
 }
 </script>
 
 <style scoped lang="scss">
 @import "src/scss/variables";
 @import "src/scss/mixins";
-.ingredients {
+.categories {
   &__title {
-    @include title(#14141d, $PD, 24px, 700);
+    @include title(#14141d, $PD, 26px, 700);
+    margin: 0 0 10px 0;
   }
   &-list {
     &__item {
       @include text(#14141d, $SR, 13px, 700, uppercase);
-      letter-spacing: 0.65px;
       display: flex;
       align-items: center;
       position: relative;
-      line-height: 35px;
-      margin-left: 25px;
+      line-height: 38px;
+      margin-left: 35px;
+      letter-spacing: 0.35px;
     }
     &__item:before {
       content: url("../../assets/icons/check-mark.svg");
@@ -41,5 +42,4 @@ name: "Ingredients",
     }
   }
 }
-
 </style>

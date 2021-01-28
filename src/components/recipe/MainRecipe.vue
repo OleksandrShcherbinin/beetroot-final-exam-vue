@@ -42,10 +42,17 @@ name: "MainRecipe",
   },
   data() {
     return {
-      ingredients: ["1/2 chopped red onions", "2 ounce lemon drop chupas chups beans",
-        "3 pounds sesame snaps powder gingerbread", "1/4 cup jujubes jelly chupa",
-        "1/2 cup sour cream(optional)", "1 ounce sugar plum pastry fruitcake",
-        "1/4 cup jujubes jelly chupas"]
+
+      ingredients: [
+          {title: '1/2 chopped red onions'},
+          {title: '2 ounce lemon drop chupas chups beans'},
+          {title: '3 pounds sesame snaps powder gingerbread'},
+          {title: '1/4 cup jujubes jelly chupa'},
+          {title: '1/2 cup sour cream(optional)'},
+          {title: '1 ounce sugar plum pastry fruitcake'},
+          {title: '1/4 cup jujubes jelly chupas'},
+      ]
+
     }
   }
 }
